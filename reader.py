@@ -64,24 +64,30 @@ b = 0
 c = 0
 d = 0
 e = 0
-paths = glob.glob('pdf/**/**/*.pdf')
+paths = glob.glob('pdf/2018/1o2018/*.pdf')
 for path in paths:    
     text = pdf_to_text(path)
+    count = 0
+    loc_a, loc_b, loc_c, loc_d, loc_e = 0, 0, 0, 0, 0
     for t in text:
         if t == 'a':
             a += 1
+            loc_a += 1
         if t == 'b':
             b += 1
+            loc_b += 1
         if t == 'c':
             c += 1
+            loc_c += 1
         if t == 'd':
             d += 1
+            loc_d += 1
         if t == 'e':
             e += 1
-    print(f"Loading: {path}")
-    print(f"A: {a}", end=' ')
-    print(f"B: {b}", end=' ')
-    print(f"C: {c}", end=' ')
-    print(f"D: {d}", end=' ')
-    print(f"E: {e}")
+            loc_e += 1
+        count += 1
+    print(f"Carregando: {path}")
+    print(f"A: {loc_a} B: {loc_b} C: {loc_c} D: {loc_d} E: {loc_e}")
+    print(f"Total de testes: {count}")
     print()
+print(f"Total: A: {a}, B: {b}, C: {c}, D: {d}, E: {e}")
