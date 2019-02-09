@@ -14,6 +14,12 @@ for i in range(1, 31):
         temp2 = f'0{i}. {j} '
         temp3 = f'0{i}. {j}'
         temp4 = f'0{i}. Alternativa {j}.'
+        temp5 = f'{i}. {j} '
+        temp6 = f'{i}. Alternativa {j}.'
+        temp7 = f'Alternativa {j}.'
+        testes.append(temp7)
+        testes.append(temp6)
+        testes.append(temp5)
         testes.append(temp4)
         testes.append(temp3)
         testes.append(temp2)
@@ -55,18 +61,15 @@ def pdf_to_text(path):
     device.close()
     retstr.close()
 
-    return result
+    return all_text
 
     
-
-a = 0
-b = 0
-c = 0
-d = 0
-e = 0
-paths = glob.glob('pdf/2018/1o2018/*.pdf')
+a, b, c, d, e = 0, 0, 0, 0, 0
+paths = glob.glob('pdf/2018/**/*.pdf')
+total = 0
 for path in paths:    
     text = pdf_to_text(path)
+    #print(text)
     count = 0
     loc_a, loc_b, loc_c, loc_d, loc_e = 0, 0, 0, 0, 0
     for t in text:
@@ -86,8 +89,12 @@ for path in paths:
             e += 1
             loc_e += 1
         count += 1
+    
+    total += count
     print(f"Carregando: {path}")
     print(f"A: {loc_a} B: {loc_b} C: {loc_c} D: {loc_d} E: {loc_e}")
     print(f"Total de testes: {count}")
     print()
-print(f"Total: A: {a}, B: {b}, C: {c}, D: {d}, E: {e}")
+
+print(f"Resultado: A: {a}, B: {b}, C: {c}, D: {d}, E: {e}")
+print(f"Total de Testes testados: {total}")
