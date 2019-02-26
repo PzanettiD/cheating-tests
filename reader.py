@@ -11,20 +11,25 @@ testes = []
 for i in range(1, 31):
     for j in ['a', 'b', 'c', 'd', 'e']:
         temp = f'{i}. {j}'
+        testes.append(temp)
         temp2 = f'0{i}. {j} '
+        testes.append(temp2)
         temp3 = f'0{i}. {j}'
+        testes.append(temp3)
         temp4 = f'0{i}. Alternativa {j}.'
+        testes.append(temp4)
         temp5 = f'{i}. {j} '
+        testes.append(temp5)
         temp6 = f'{i}. Alternativa {j}.'
+        testes.append(temp6)
         temp7 = f'Alternativa {j}.'
         testes.append(temp7)
-        testes.append(temp6)
-        testes.append(temp5)
-        testes.append(temp4)
-        testes.append(temp3)
-        testes.append(temp2)
-        testes.append(temp)
+        
 def pdf_to_text(path):
+    """
+    Input: Path (pdf file)
+    Output: An array of letters (answers from the test's questions)
+    """
     codec = 'utf-8'
     manager = PDFResourceManager()
     retstr = BytesIO()
@@ -60,8 +65,7 @@ def pdf_to_text(path):
     filepath.close()
     device.close()
     retstr.close()
-
-    return all_text
+    return result
 
     
 a, b, c, d, e = 0, 0, 0, 0, 0
@@ -69,7 +73,6 @@ paths = glob.glob('pdf/2018/**/*.pdf')
 total = 0
 for path in paths:    
     text = pdf_to_text(path)
-    #print(text)
     count = 0
     loc_a, loc_b, loc_c, loc_d, loc_e = 0, 0, 0, 0, 0
     for t in text:
