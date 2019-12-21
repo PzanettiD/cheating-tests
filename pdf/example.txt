@@ -1,0 +1,3 @@
+So, in this folder is where all of my school's tests were stored. After some thought, I removed them because they were not intended for the public view. But I can/must at least explain how it worked.
+There were different directories from different years (2016, 2017 and 2018) and within those, there were pdfs wich contained both the past test's questions and answers, the tricky part was that they were not in some standard form, which I learned later, I then had to search for specific key words that worked in some types of files. You can see that in my reader.py file.
+
