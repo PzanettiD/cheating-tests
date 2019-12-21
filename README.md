@@ -4,7 +4,7 @@ This project was made for my CS50x 2018 final project.
 ## What is it?
 Basically a brute force terminal program that analyzes past test answers, with the goal of counting what were the most frequent ones.
 
-My school, puts out online pdfs that contain test answers dated back to 2016. All of this pdfs are avaialbe in the pdf folder. The pdfs were not all standardised, and so establishing a pattern was pretty tricky.
+My school, puts out online pdfs that contain test answers dating back to 2016. All of this pdfs are avaialbe in the pdf folder. The pdfs were not all standardised, and so establishing a pattern was pretty tricky.
 
 Inside reader.py (the main file), you can see I used pdfminer, to extract the text from pdf, and then filtered it through key words, so that I could retrieve the test answers.
 
