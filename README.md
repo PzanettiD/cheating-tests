@@ -13,7 +13,7 @@ After that, I used the data I got from reader,py, to generate graphs using Jupyt
 ## Output
 Here is the graphs with the output of the program (they can be found in [graphs.ipynb](https://github.com/PzanettiD/cheating-tests/blob/master/graphs.ipynb)):
 
-![Preview](https://i.imgur.com/Nk2p7aA.png)
+![Preview](https://i.imgur.com/Nk2p7aA.png)![Preview](https://i.imgur.com/clLx5cO.png)
 
 
 ## Motive
